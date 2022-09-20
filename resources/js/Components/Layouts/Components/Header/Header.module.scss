@@ -1,7 +1,37 @@
 .header-wrapper {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px 0;
+
     .logo {
+        flex: 25%;
+
         figure {
             max-width: 85px;
         }
     }
+
+    .nav-bar {
+        flex: 50%;
+
+        a {
+            text-transform: uppercase;
+            padding: 15px;
+        }
+    }
+
+    .search {
+        flex: 25%;
+    }
+}
+
+.header-container {
+    display: block;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 0 20px;
+    width: 100%;
 }

@@ -4,7 +4,7 @@ export default function TextInput({
     type = 'text',
     name,
     value,
-    className,
+    placeholder,
     autoComplete,
     required,
     isFocused,
@@ -24,10 +24,7 @@ export default function TextInput({
                 type={type}
                 name={name}
                 value={value}
-                className={
-                    `border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm ` +
-                    className
-                }
+                placeholder={placeholder}
                 ref={input}
                 autoComplete={autoComplete}
                 required={required}

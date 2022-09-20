@@ -6,7 +6,9 @@ import Footer from '../Components/Footer';
 export default function Default({ children }) {
     return (
         <>
-            <Header />
+            <div className="container-fluid">
+                <Header />
+            </div>
             <main className="main-content">{children}</main>
             <Footer />
         </>

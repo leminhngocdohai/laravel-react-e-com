@@ -5,12 +5,21 @@ html {
 }
 
 :root {
+    --color__dark: #202020;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+container {
+    display: block;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 0 20px;
+    width: 100%;
 }
 
 body {
@@ -20,6 +29,20 @@ body {
     text-rendering: optimizeSpeed;
 }
 
+a {
+    font-size: 16px;
+    color: var(--color__dark);
+
+    text-decoration-line: none;
+    transition: all ease 0.3s;
+
+    &:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+    }
+}
+
 p {
     font-size: 16px;
     margin-bottom: 10px;
@@ -27,4 +50,8 @@ p {
     &:last-child {
         margin-bottom: 0;
     }
+}
+
+.inline-flex {
+    color: red;
 }
