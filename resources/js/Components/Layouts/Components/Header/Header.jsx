@@ -33,8 +33,8 @@ export default function Header() {
                                 required="required"
                                 placeholder="Search"
                             />
+                            <button>search</button>
                         </div>
-                        <h1 className={cx('header')}>Header Default</h1>
                     </div>
                 </div>
             </header>

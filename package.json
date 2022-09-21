@@ -29,6 +29,8 @@
     "dependencies": {
         "classnames": "^2.3.2",
         "prettier": "^2.7.1",
-        "sass": "^1.54.9"
+        "react-slick": "^0.29.0",
+        "sass": "^1.54.9",
+        "slick-carousel": "^1.8.1"
     }
 }
