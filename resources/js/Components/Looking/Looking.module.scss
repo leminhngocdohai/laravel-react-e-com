@@ -1,0 +1,30 @@
+.container {
+    max-width: var(--container__max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+
+    .wrapper {
+        margin: 40px 0 0;
+        padding: 0 0 80px;
+        border-bottom: 1px solid var(--color__border);
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .list-looking {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .item-looking {
+            text-align: center;
+        }
+
+        h5 {
+            text-transform: uppercase;
+        }
+    }
+}

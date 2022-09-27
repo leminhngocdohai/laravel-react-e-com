@@ -1,0 +1,25 @@
+.container {
+    max-width: 100%;
+    width: 100%;
+    background: var(--color__primary);
+
+    .wrapper {
+        color: #fff;
+        margin: 0 auto;
+        max-width: var(--container__max-width);
+        padding: 100px 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .memberships {
+        h4 {
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+    }
+}

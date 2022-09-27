@@ -5,7 +5,13 @@ html {
 }
 
 :root {
-    --color__dark: #202020;
+    --color__primary: #293355;
+    --color__link: #ba7a2d;
+    --color__border: #999;
+    --color__dark: #333;
+    --container__max-width: 1280px;
+    --font-family: 'Overpass', 'sans-serif';
+    --transition-time: 0.25s;
 }
 
 * {
@@ -14,16 +20,10 @@ html {
     box-sizing: border-box;
 }
 
-container {
-    display: block;
-    margin: 0 auto;
-    max-width: 1280px;
-    padding: 0 20px;
-    width: 100%;
-}
-
 body {
-    font-family: 'Overpass', 'sans-serif';
+    background: #fafafa;
+    color: var(--color__dark);
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
@@ -31,10 +31,8 @@ body {
 
 a {
     font-size: 16px;
-    color: var(--color__dark);
-
+    color: var(--color__link);
     text-decoration-line: none;
-    transition: all ease 0.3s;
 
     &:hover {
         text-decoration: underline;
@@ -45,6 +43,7 @@ a {
 
 p {
     font-size: 16px;
+    line-height: 20px;
     margin-bottom: 10px;
 
     &:last-child {
@@ -54,4 +53,60 @@ p {
 
 img {
     width: 100%;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 55px;
+    margin-bottom: 16px;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 46px;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 40px;
+    margin-bottom: 12px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 12px;
+}
+
+h5 {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+button {
+    background: #fff;
+    border-radius: 0;
+    border: 2px solid var(--color__link);
+    color: var(--color__primary);
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: all var(--transition-time) linear;
+
+    &:focus,
+    &:hover,
+    &:active {
+        background: var(--color__primary);
+        color: #fff;
+        outline: 0;
+    }
 }

@@ -36,8 +36,8 @@ export default function Banner() {
         <>
             <div className={cx('banner')}>
                 <Slider {...setting}>
-                    {banners.map((banner) => (
-                        <div className={cx('banner-item')}>
+                    {banners.map((banner, index) => (
+                        <div className={cx('banner-item')} key={index}>
                             <a href="#">
                                 <figure>
                                     <img src={banner} alt="#" />

@@ -1,0 +1,21 @@
+.container {
+    max-width: var(--container__max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+
+    .wrapper {
+        padding: 80px 0;
+    }
+
+    .heading {
+        text-align: center;
+    }
+
+    .content {
+        .background {
+            display: flex;
+            max-width: 80%;
+        }
+    }
+}

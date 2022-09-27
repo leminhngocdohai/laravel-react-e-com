@@ -1,0 +1,38 @@
+.container {
+    max-width: var(--container__max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+
+    .wrapper {
+        padding: 80px 0 80px;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .list-product {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 12px;
+
+        .item-product {
+            flex: calc(25% - 9px);
+            max-width: calc(25% - 9px);
+
+            .info-product {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        .list-product {
+            padding-top: 25px;
+        }
+    }
+}
