@@ -110,3 +110,29 @@ button {
         outline: 0;
     }
 }
+
+input {
+    border-radius: 0;
+    border: 2px solid var(--color__link);
+    color: var(--color__primary);
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    padding: 10px;
+
+    &:focus,
+    &:hover,
+    &:active {
+        color: #fff;
+        outline: 0;
+    }
+}
+
+svg {
+    width: 100%;
+}
+
+figure {
+    display: flex;
+}

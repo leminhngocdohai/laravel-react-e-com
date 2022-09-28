@@ -1,9 +1,12 @@
 import React from 'react';
 
+import logo from '@/assets/images/logo/logo-new-22.png';
+
 export default function ApplicationLogo() {
     return (
         <figure>
-            <svg
+            <img src={logo} alt="Logo" />
+            {/* <svg
                 version="1.1"
                 id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +49,7 @@ export default function ApplicationLogo() {
                     />
                     <path d="M143.81,16.17c0,7.4,0,14.7,0,22.1c-47.9,0-95.7,0-143.6,0c0-5.8,0-11.4,0-17.5C48.11,20.67,95.91,21.17,143.81,16.17z" />
                 </g>
-            </svg>
+            </svg> */}
         </figure>
     );
 }

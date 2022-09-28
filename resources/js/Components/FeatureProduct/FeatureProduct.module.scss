@@ -10,12 +10,28 @@
 
     .heading {
         text-align: center;
+        margin-bottom: 30px;
     }
 
     .content {
+        position: relative;
+
         .background {
             display: flex;
             max-width: 80%;
+        }
+
+        .item-product {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            flex: calc(25% - 9px);
+            max-width: calc(25% - 9px);
+
+            .info-product {
+                text-align: center;
+            }
         }
     }
 }

@@ -1,11 +1,40 @@
 .container {
-    max-width: var(--container__max-width);
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 100%;
+    background-color: #fff;
+    padding: 40px;
 
     .wrapper {
-        padding: 80px 0;
+        padding: 80px 20[x];
         text-align: center;
+        max-width: var(--container__max-width);
+        margin: 0 auto;
+        padding: 0 20px;
+        width: 100%;
+    }
+
+    .detail {
+        max-width: 900px;
+        margin: 0 auto 30px;
+    }
+
+    .contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+
+        .contact-item {
+            width: 20%;
+
+            figure {
+                display: flex;
+                margin-bottom: 15px;
+
+                img {
+                    width: 100%;
+                    margin: auto;
+                    max-width: 50px;
+                }
+            }
+        }
     }
 }

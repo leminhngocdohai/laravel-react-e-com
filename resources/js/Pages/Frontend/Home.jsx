@@ -19,9 +19,9 @@ export default function Home(props) {
             <FeatureProduct />
             <About />
 
-            <Link href={route('/')} className="text-sm text-gray-700 dark:text-gray-500 underline">
+            {/* <Link href={route('/')} className="text-sm text-gray-700 dark:text-gray-500 underline">
                 Welcome
-            </Link>
+            </Link> */}
         </>
     );
 }
