@@ -33,4 +33,9 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Category
+Route::get('/category/index', function () {
+    return Inertia::render('Backend/Category/Category');
+})->name('category.index');
+
 require __DIR__.'/auth.php';
