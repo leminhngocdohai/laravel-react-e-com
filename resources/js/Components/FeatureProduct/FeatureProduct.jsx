@@ -3,8 +3,8 @@ import React from 'react';
 import styles from './FeatureProduct.module.scss';
 import classNames from 'classnames/bind';
 
-import image from '@/assets/images/productListing/product.webp';
-import banner from '@/assets/images/featureProduct/feature-product.webp';
+import image from '@/assets/images/productListing/product.jpg';
+import banner from '@/assets/images/featureProduct/banner-1.jpg';
 
 const cx = classNames.bind(styles);
 

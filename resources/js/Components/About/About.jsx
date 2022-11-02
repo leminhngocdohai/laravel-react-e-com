@@ -32,7 +32,7 @@ function About() {
                             <figure>
                                 <img src={phone} alt="alt" />
                             </figure>
-                            <a href="#">03.89.84.77.55</a>
+                            <a href="#">0966861763</a>
                         </div>
                         <div className={cx('contact-item')}>
                             <figure>
