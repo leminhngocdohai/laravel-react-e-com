@@ -28,3 +28,30 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .container {
+        .list-looking {
+            .item-looking {
+                flex: 50%;
+                figure {
+                    max-width: 100px;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 479px) {
+    .container {
+        .list-looking {
+            .item-looking {
+                flex: 25%;
+                figure {
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
+}

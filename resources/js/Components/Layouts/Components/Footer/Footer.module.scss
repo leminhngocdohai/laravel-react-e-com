@@ -63,3 +63,30 @@
         text-align: center;
     }
 }
+
+@media (max-width: 768px) {
+    .container {
+        .footer-top {
+            flex-wrap: wrap;
+            text-align: center;
+
+            .footer-column {
+                flex: 100%;
+                max-width: 100%;
+                margin-bottom: 10px;
+
+                &.logo {
+                    justify-content: center;
+
+                    figure {
+                        max-width: 150px;
+                    }
+                }
+
+                &.social {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
