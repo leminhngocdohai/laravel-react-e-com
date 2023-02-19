@@ -14,5 +14,14 @@ class Category extends Model
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['name','slug','image','parent_id'];
+
+    protected $guarded = [];
+
+    protected $primaryKey = 'id';
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

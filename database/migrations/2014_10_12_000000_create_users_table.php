@@ -15,10 +15,16 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->date('birth');
+            $table->enum('gender',['male','female','others']);
+            $table->enum('status',['1','0']);
+            $table->string('address',255);
+            $table->string('avatar',255);
+            $table->string('email',60)->unique();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('phone',30);
+            $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -34,3 +40,4 @@ return new class extends Migration
         Schema::dropIfExists('users');
     }
 };
+

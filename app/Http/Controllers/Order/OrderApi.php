@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Category;
+namespace App\Http\Controllers\Order;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
-class CategoryApi extends Controller
+class OrderApi extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class CategoryApi extends Controller
      */
     public function index()
     {
-        return Category::orderBy('id', 'desc')->get();
+        return Order::orderBy('id', 'desc')->get();
     }
 
     /**
@@ -37,7 +37,7 @@ class CategoryApi extends Controller
      */
     public function show($id)
     {
-        return Category::find($id);
+        return Order::find($id);
     }
 
     /**

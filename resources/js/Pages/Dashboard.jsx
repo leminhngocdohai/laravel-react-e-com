@@ -1,8 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/inertia-react';
 
 export default function Dashboard(props) {
+    const [currentTab, setCurrentTab] = useState('1');
+    const tabs = [
+        {
+            id: 1,
+            tabTitle: 'Danh Mục',
+            title: 'Danh Mục',
+            content: 'This is Danh mục',
+        },
+        {
+            id: 2,
+            tabTitle: 'Sản Phẩm',
+            title: 'Sản Phẩm',
+            content: 'This is Sản Phẩm',
+        },
+        {
+            id: 3,
+            tabTitle: 'Người dùng',
+            title: 'Người dùng',
+            content: 'This is Người dùng',
+        },
+        {
+            id: 4,
+            tabTitle: 'Đơn Hàng',
+            title: 'Đơn Hàng',
+            content: 'This is Đơn Hàng',
+        },
+    ];
+
+    const handleTabClick = (e) => {
+        setCurrentTab(e.target.id);
+    };
+
     return (
         <AuthenticatedLayout
             auth={props.auth}
@@ -11,11 +43,25 @@ export default function Dashboard(props) {
         >
             <Head title="Dashboard" />
 
-            <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 bg-white border-b border-gray-200">You're logged in!</div>
-                    </div>
+            <div className="container">
+                <div className="tabs">
+                    {tabs.map((tab, i) => (
+                        <button key={i} id={tab.id} disabled={currentTab === `${tab.id}`} onClick={handleTabClick}>
+                            {tab.tabTitle}
+                        </button>
+                    ))}
+                </div>
+                <div className="content">
+                    {tabs.map((tab, i) => (
+                        <div key={i}>
+                            {currentTab === `${tab.id}` && (
+                                <div>
+                                    <p className="title">{tab.title}</p>
+                                    <p>{tab.content}</p>
+                                </div>
+                            )}
+                        </div>
+                    ))}
                 </div>
             </div>
         </AuthenticatedLayout>
