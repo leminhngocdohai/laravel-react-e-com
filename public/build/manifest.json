@@ -11,13 +11,13 @@
     "file": "assets/product.6d019784.jpg",
     "src": "resources/js/assets/images/productListing/product.jpg"
   },
-  "resources/js/assets/images/productListing/product2.jpg": {
-    "file": "assets/product2.702a25e4.jpg",
-    "src": "resources/js/assets/images/productListing/product2.jpg"
-  },
   "resources/js/assets/images/productListing/product1.jpg": {
     "file": "assets/product1.b91f9b71.jpg",
     "src": "resources/js/assets/images/productListing/product1.jpg"
+  },
+  "resources/js/assets/images/productListing/product2.jpg": {
+    "file": "assets/product2.702a25e4.jpg",
+    "src": "resources/js/assets/images/productListing/product2.jpg"
   },
   "resources/js/assets/images/productListing/product3.jpg": {
     "file": "assets/product3.559b9199.jpg",
