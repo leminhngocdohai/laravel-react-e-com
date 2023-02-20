@@ -268,12 +268,12 @@
       "_Api.9a6f7da6.js"
     ]
   },
-  "resources/js/Pages/Frontend/Home.css": {
-    "file": "assets/Home.9b6cdd8d.css",
-    "src": "resources/js/Pages/Frontend/Home.css"
-  },
   "resources/js/app.css": {
     "file": "assets/app.48bf6e6c.css",
     "src": "resources/js/app.css"
+  },
+  "resources/js/Pages/Frontend/Home.css": {
+    "file": "assets/Home.9b6cdd8d.css",
+    "src": "resources/js/Pages/Frontend/Home.css"
   }
 }
