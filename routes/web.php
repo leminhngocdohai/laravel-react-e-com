@@ -34,9 +34,16 @@ Route::prefix('dashboard')->group(function () {
         return Inertia::render('Backend/Dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
 
+    // Category
     Route::get('/category', function () {
         return Inertia::render('Backend/Category/Index');
     })->middleware(['auth', 'verified'])->name('dashboard.category');
+    Route::get('/category/create', function () {
+        return Inertia::render('Backend/Category/Create');
+    })->middleware(['auth', 'verified'])->name('dashboard.category.create');
+    Route::get('/category/edit', function () {
+        return Inertia::render('Backend/Category/Edit');
+    })->middleware(['auth', 'verified'])->name('dashboard.category.edit');
 
     Route::get('/product', function () {
         return Inertia::render('Backend/Product/Index');

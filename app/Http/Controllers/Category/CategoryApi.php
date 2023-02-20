@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Category;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class CategoryApi extends Controller
 {
@@ -26,7 +29,19 @@ class CategoryApi extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = Category::create([
+            'name' => $request->name,
+            'image' => $request->image,
+            'email' => $request->email,
+            'sku' => $request->sku,
+            'parent_id' => $request->parent_id,
+            'slug' => Str::slug($request->name)
+        ]);
+
+
+        $category->save();
+
+        return redirect(RouteServiceProvider::HOME);
     }
 
     /**

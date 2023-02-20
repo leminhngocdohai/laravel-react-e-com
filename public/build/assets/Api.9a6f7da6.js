@@ -1,0 +1,1 @@
+import{d as e}from"./app.1df07cef.js";e.defaults.baseURL="http://127.0.0.1:8000/api";const o=t=>e.get("/category",t),r=t=>e.get("/product",t),a=t=>e.get("/user",t),g=t=>e.get("/order",t);export{g as a,r as b,a as c,o as g};

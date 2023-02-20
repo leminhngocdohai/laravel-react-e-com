@@ -17,6 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('name', 255)->unique();
             $table->string('image', 255)->nullable();
+            $table->string('sku', 255)->unique();
             $table->string('slug', 255)->unique();
             $table->smallInteger('parent_id');
             $table->timestamps();

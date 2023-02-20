@@ -18,6 +18,6 @@ export const getOrder = (config) => axios.get('/order', config);
 
 export const getOrderById = (id, config) => axios.get(`/order/show/${id}`, config);
 
-export const getAttribute = (config) => axios.get('/attribute', config);
+// export const getAttribute = (config) => axios.get('/attribute', config);
 
-export const getAttributeById = (id, config) => axios.get(`/attribute/show/${id}`, config);
+// export const getAttributeById = (id, config) => axios.get(`/attribute/show/${id}`, config);

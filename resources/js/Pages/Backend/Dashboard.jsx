@@ -3,7 +3,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Link, Head } from '@inertiajs/inertia-react';
 
 export default function Dashboard(props) {
-    const [currentTab, setCurrentTab] = useState('1');
+    const [currentTab, setCurrentTab] = useState(1);
     const tabs = [
         {
             id: 1,
@@ -27,10 +27,6 @@ export default function Dashboard(props) {
         },
     ];
 
-    const handleTabClick = (e) => {
-        setCurrentTab(e.target.id);
-    };
-
     return (
         <AuthenticatedLayout auth={props.auth} errors={props.errors} header={<h2>Trang chủ</h2>}>
             <Head title="Trang chủ">
@@ -46,7 +42,7 @@ export default function Dashboard(props) {
                                 key={tab.id}
                                 id={tab.id}
                                 disabled={currentTab === `${tab.id}`}
-                                onClick={handleTabClick}
+                                onClick={(e) => e.target.id}
                                 className="btn"
                             >
                                 {tab.tabTitle}

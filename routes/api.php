@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 // Categories
 Route::prefix('category')->group(function () {
     Route::get('/', [CategoryApi::class, 'index']);
+    Route::post('/store', [CategoryApi::class, 'store'])->name('api.category.store');
     Route::get('show/{id}', [CategoryApi::class, 'show']);
 });
 

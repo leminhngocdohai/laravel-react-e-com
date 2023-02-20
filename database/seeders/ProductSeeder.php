@@ -21,6 +21,7 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Chuông chữ phật',
                 'image' => 'ga.jpg',
+                'sku' => 'ABC01',
                 'price' => '400000',
                 'quantity' => '1000',
                 'description' => 'Nois chung laf buon',
@@ -30,6 +31,7 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Chuông án mani',
                 'image' => 'ga.jpg',
+                'sku' => 'ABC02',
                 'quantity' => '1000',
                 'price' => '400000',
                 'description' => 'Nois chung laf buon',
@@ -39,6 +41,7 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Chuông Hoa sen',
                 'image' => 'ga.jpg',
+                'sku' => 'ABC03',
                 'quantity' => '1000',
                 'price' => '400000',
                 'description' => 'Nois chung laf buon',
@@ -48,6 +51,7 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Chuông xoay',
                 'image' => 'ga.jpg',
+                'sku' => 'ABC04',
                 'quantity' => '1000',
                 'price' => '400000',
                 'description' => 'Nois chung laf buon',

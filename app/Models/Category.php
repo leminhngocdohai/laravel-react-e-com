@@ -14,7 +14,7 @@ class Category extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','slug','image','parent_id'];
+    protected $fillable = ['name','sku','slug','image','parent_id'];
 
     protected $guarded = [];
 

@@ -1,37 +1,62 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
+
 import Dashboard from '../Dashboard';
+import { Link } from '@inertiajs/inertia-react';
+import { getCategory } from '@/service/Api';
 
 import Table from '@/Components/Table';
 
-const rows = [{ name: 'Tên' }, { name: 'Ga' }];
-const cols = [
-    {
-        id: 9,
-        name: 'Chuông Đài Loan 9',
-        image: 'ga.jpg',
-        slug: 'chuong-dai-loan-9',
-        parent_id: 0,
-        created_at: '2023-02-20T07:28:23.000000Z',
-        updated_at: null,
-    },
-    {
-        id: 8,
-        name: 'Chuông Đài Loan 8',
-        image: 'ga.jpg',
-        slug: 'chuong-dai-loan-8',
-        parent_id: 0,
-        created_at: '2023-02-20T07:28:23.000000Z',
-        updated_at: null,
-    },
-];
-console.log(rows.name);
-
 export default function Index() {
+    const [categories, setCategory] = useState([]);
+
+    useEffect(() => {
+        getCategory().then((res) => {
+            if (res?.data) {
+                setCategory(res.data);
+            }
+        });
+    }, []);
+
     return (
         <>
             <Dashboard>
-                <h1>Danh sách sản phẩm</h1>
-                <Table rows={rows} />
+                <h1>Danh mục</h1>
+                <Link className="btn" href={route('dashboard.category.create')}>
+                    Thêm danh mục +
+                </Link>
+                <table className="styled-table">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Tên</th>
+                            <th>Hình ảnh</th>
+                            <th>Mã SP</th>
+                            <th>Ngày tạo</th>
+                            <th>Ngày sửa</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {categories.map((cate, i) => (
+                            <tr key={i}>
+                                <td>{i + 1}</td>
+                                <td>{cate.name}</td>
+                                <td>{cate.image}</td>
+                                <td>{cate.sku}</td>
+                                <td>{cate.created_at}</td>
+                                <td>{cate.updated_at}</td>
+                                <td>
+                                    <Link href={route('dashboard.category.edit')}>Sửa</Link>
+                                </td>
+                                <td>
+                                    <Link href={route('dashboard')}>Xóa</Link>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </Dashboard>
         </>
     );
