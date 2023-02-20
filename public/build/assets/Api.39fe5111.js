@@ -1,0 +1,1 @@
+import{d as e}from"./app.32a3488e.js";e.defaults.baseURL="https://vanphap.com/api";const a=t=>e.get("/category",t),o=t=>e.get("/product",t),r=t=>e.get("/user",t),g=t=>e.get("/order",t);export{g as a,o as b,r as c,a as g};
