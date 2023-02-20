@@ -1,4 +1,5 @@
 import './bootstrap';
+import './assets/css/app.css';
 
 import React from 'react';
 import { render } from 'react-dom';
@@ -18,9 +19,9 @@ createInertiaApp({
         return render(
             <>
                 <Styleguide>
-                    <Default>
+                    <>
                         <App {...props} />
-                    </Default>
+                    </>
                 </Styleguide>
             </>,
             el,

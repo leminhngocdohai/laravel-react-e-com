@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Head } from '@inertiajs/inertia-react';
 import axios from 'axios';
+import { getCategory, getCategoryById } from '@/service/Api';
 
 export default function Welcome(props) {
     const [names, setName] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/categories`).then((response) => {
+        getCategory().then((response) => {
             // handle success
-            console.log(response.data);
+
             response.data.map((index) => {
-                setName((sos) => [...sos, index.name]);
+                setName((data) => [...data, index.name]);
             });
-            console.log(names, 'names');
         });
     }, []);
 

@@ -29,9 +29,31 @@ Route::get('/', function () {
 })->name('/');
 
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::prefix('dashboard')->group(function () {
+    Route::get('/', function () {
+        return Inertia::render('Backend/Dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');
+
+    Route::get('/category', function () {
+        return Inertia::render('Backend/Category/Index');
+    })->middleware(['auth', 'verified'])->name('dashboard.category');
+
+    Route::get('/product', function () {
+        return Inertia::render('Backend/Product/Index');
+    })->middleware(['auth', 'verified'])->name('dashboard.product');
+
+    Route::get('/user', function () {
+        return Inertia::render('Backend/User/Index');
+    })->middleware(['auth', 'verified'])->name('dashboard.user');
+
+    Route::get('/order', function () {
+        return Inertia::render('Backend/Order/Index');
+    })->middleware(['auth', 'verified'])->name('dashboard.order');
+});
+
+Route::get('/welcome', function () {
+    return Inertia::render('Welcome');
+})->middleware(['auth', 'verified'])->name('welcome');
 
 // Category
 Route::get('/category/index', function () {
