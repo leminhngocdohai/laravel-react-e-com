@@ -28,18 +28,14 @@ export default function Dashboard(props) {
     ];
 
     return (
-        <AuthenticatedLayout auth={props.auth} errors={props.errors} header={<h2>Trang chủ</h2>}>
-            <Head title="Trang chủ">
-                <Link href={route('dashboard')}>Trang chủ</Link>
-            </Head>
-
+        <AuthenticatedLayout auth={props.auth} errors={props.errors}>
             <div className="container">
                 <div className="tabs">
-                    {tabs.map((tab) => (
+                    {tabs.map((tab, i) => (
                         <>
                             <Link
                                 href={route(`${tab.url}`)}
-                                key={tab.id}
+                                key={i}
                                 id={tab.id}
                                 disabled={currentTab === `${tab.id}`}
                                 onClick={(e) => e.target.id}

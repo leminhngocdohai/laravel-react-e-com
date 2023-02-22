@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 
 import Dashboard from '../Dashboard';
-import { Link } from '@inertiajs/inertia-react';
+import { Link, InertiaLink, usePage } from '@inertiajs/inertia-react';
 import { getCategory } from '@/service/Api';
 
 import Table from '@/Components/Table';
@@ -17,6 +17,9 @@ export default function Index() {
             }
         });
     }, []);
+
+    const { props } = usePage();
+    console.log(props);
 
     return (
         <>
@@ -40,7 +43,7 @@ export default function Index() {
                     </thead>
                     <tbody>
                         {categories.map((cate, i) => (
-                            <tr key={i}>
+                            <tr data-i={i} key={i}>
                                 <td>{i + 1}</td>
                                 <td>{cate.name}</td>
                                 <td>{cate.image}</td>
@@ -48,10 +51,12 @@ export default function Index() {
                                 <td>{cate.created_at}</td>
                                 <td>{cate.updated_at}</td>
                                 <td>
-                                    <Link href={route('dashboard.category.edit')}>Sửa</Link>
+                                    <Link href={route('dashboard.category.edit', cate.id)}>Sửa</Link>
                                 </td>
                                 <td>
-                                    <Link href={route('dashboard')}>Xóa</Link>
+                                    <Link replace href={route('api.category.destroy', cate.id)}>
+                                        Xóa
+                                    </Link>
                                 </td>
                             </tr>
                         ))}

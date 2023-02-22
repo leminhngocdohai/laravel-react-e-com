@@ -31,17 +31,17 @@ class CategoryApi extends Controller
     {
         $category = Category::create([
             'name' => $request->name,
-            'image' => $request->image,
             'email' => $request->email,
             'sku' => $request->sku,
             'parent_id' => $request->parent_id,
             'slug' => Str::slug($request->name)
         ]);
 
+        // dd($request->hasFile('image'));die();
 
         $category->save();
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect()->route('dashboard.category')->with('message', 'Category Created Successfully');
     }
 
     /**
@@ -75,6 +75,10 @@ class CategoryApi extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = Category::findOrFail($id);
+        $user->delete();
+        return redirect()->route('dashboard.category')
+            ->with('flash_message',
+             'User successfully deleted.');
     }
 }

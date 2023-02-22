@@ -41,9 +41,14 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/category/create', function () {
         return Inertia::render('Backend/Category/Create');
     })->middleware(['auth', 'verified'])->name('dashboard.category.create');
-    Route::get('/category/edit', function () {
-        return Inertia::render('Backend/Category/Edit');
+    Route::get('/category/edit/{id}', function ($id) {
+        return Inertia::render('Backend/Category/Edit', [
+            'id' => $id,
+        ]);
     })->middleware(['auth', 'verified'])->name('dashboard.category.edit');
+    Route::get('/category/destroy/{id}', [CategoryApi::class, 'destroy'])
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard.category.destroy');
 
     Route::get('/product', function () {
         return Inertia::render('Backend/Product/Index');

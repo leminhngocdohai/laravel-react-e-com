@@ -15,6 +15,8 @@ import { Head, Link, useForm } from '@inertiajs/inertia-react';
 import Table from '@/Components/Table';
 
 export default function Create() {
+    const [inputImage, setInputImage] = useState('');
+
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
         image: '',
@@ -24,8 +26,13 @@ export default function Create() {
 
     const onHandleChange = (event) => {
         setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value);
-    };
 
+        if (event.target.type === 'file') {
+            const img = event.target.files[0];
+            setInputImage(URL.createObjectURL(img));
+        }
+    };
+    console.log('input img', inputImage);
     const submit = (e) => {
         e.preventDefault();
 
@@ -37,7 +44,7 @@ export default function Create() {
             <Dashboard>
                 <h1>Thêm danh mục</h1>
 
-                <form onSubmit={submit}>
+                <form onSubmit={submit} encType="multipart/form-data">
                     <div>
                         <InputLabel forInput="name" value="Tên" />
                         <TextInput
@@ -55,7 +62,7 @@ export default function Create() {
                     <div>
                         <InputLabel forInput="image" value="Hình ảnh" />
                         <TextInput
-                            type="text"
+                            type="file"
                             name="image"
                             value={data.image}
                             className=""
@@ -63,6 +70,7 @@ export default function Create() {
                             isFocused={true}
                             handleChange={onHandleChange}
                         />
+                        <img className="input-img" src={inputImage} alt="" />
                         <InputError message={errors.name} />
                     </div>
 

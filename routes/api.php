@@ -28,6 +28,7 @@ Route::prefix('category')->group(function () {
     Route::get('/', [CategoryApi::class, 'index']);
     Route::post('/store', [CategoryApi::class, 'store'])->name('api.category.store');
     Route::get('show/{id}', [CategoryApi::class, 'show']);
+    Route::get('/destroy/{id}', [CategoryApi::class, 'destroy'])->name('api.category.destroy');
 });
 
 // Products

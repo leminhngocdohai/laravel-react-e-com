@@ -168,6 +168,21 @@ figure {
     margin-bottom: 20px;
 }
 
+.admin-nav * {
+    color: #fff;
+    font-size: 30px;
+}
+
+.admin-nav {
+    background: #333;
+    padding: 30px;
+}
+
+.input-img {
+    max-width: 200px;
+    padding: 20px;
+}
+
 @media (max-width: 767px) {
     h1 {
         font-size: 30px;
