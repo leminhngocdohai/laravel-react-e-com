@@ -19,7 +19,7 @@ export default function Create() {
 
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
-        image: '',
+        image: null,
         sku: '',
         parent_id: '',
     });
@@ -32,11 +32,18 @@ export default function Create() {
             setInputImage(URL.createObjectURL(img));
         }
     };
-    console.log('input img', inputImage);
+
+    const handleInputFile = (e) => {
+        setData('image', e.target.files[0]);
+        setInputImage(URL.createObjectURL(e.target.files[0]));
+    };
+
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('api.category.store'));
+        post(route('api.category.store'), data, {
+            forceFormData: true,
+        });
     };
 
     return (
@@ -61,15 +68,7 @@ export default function Create() {
 
                     <div>
                         <InputLabel forInput="image" value="Hình ảnh" />
-                        <TextInput
-                            type="file"
-                            name="image"
-                            value={data.image}
-                            className=""
-                            autoComplete="image"
-                            isFocused={true}
-                            handleChange={onHandleChange}
-                        />
+                        <input type="file" onChange={handleInputFile} />
                         <img className="input-img" src={inputImage} alt="" />
                         <InputError message={errors.name} />
                     </div>

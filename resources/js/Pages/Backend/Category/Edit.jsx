@@ -13,16 +13,15 @@ import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm, InertiaLink, usePage } from '@inertiajs/inertia-react';
 
 export default function Edit() {
-    const [inputImage, setInputImage] = useState('');
-
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
         image: '',
         sku: '',
         parent_id: '',
     });
+
     const { props } = usePage();
-    console.log(props.id);
+    const [inputImage, setInputImage] = useState('');
 
     const onHandleChange = (event) => {
         setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value);
@@ -37,14 +36,20 @@ export default function Edit() {
         getCategoryById(props.id).then((res) => {
             if (res?.data) {
                 setData(res.data);
+                setInputImage(props.ziggy.url + '/assets/upload/category/' + res.data.image);
             }
         });
     }, []);
 
+    const handleInputFile = (e) => {
+        setData('image', e.target.files[0]);
+        setInputImage(URL.createObjectURL(e.target.files[0]));
+    };
+
     const submit = (e) => {
         e.preventDefault();
 
-        // post(route('api.category.store'));
+        post(route('api.category.update', data.id));
     };
 
     return (
@@ -69,15 +74,7 @@ export default function Edit() {
 
                     <div>
                         <InputLabel forInput="image" value="Hình ảnh" />
-                        <TextInput
-                            type="file"
-                            name="image"
-                            value=""
-                            className=""
-                            autoComplete="image"
-                            isFocused={true}
-                            handleChange={onHandleChange}
-                        />
+                        <input type="file" onChange={handleInputFile} />
                         <img className="input-img" src={inputImage} alt="" />
                         <InputError message={errors.name} />
                     </div>
@@ -111,7 +108,7 @@ export default function Edit() {
                     </div>
 
                     <PrimaryButton className="btn" processing={processing}>
-                        Tạo Danh Mục
+                        Sửa Danh Mục
                     </PrimaryButton>
                 </form>
             </Dashboard>

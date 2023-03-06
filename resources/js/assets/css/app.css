@@ -164,6 +164,10 @@ figure {
     color: var(--color__link);
 }
 
+.styled-table img {
+    max-width: 100px;
+}
+
 .tabs {
     margin-bottom: 20px;
 }

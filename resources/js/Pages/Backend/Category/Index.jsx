@@ -2,10 +2,9 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 
 import Dashboard from '../Dashboard';
-import { Link, InertiaLink, usePage } from '@inertiajs/inertia-react';
+import { Link, usePage } from '@inertiajs/inertia-react';
 import { getCategory } from '@/service/Api';
-
-import Table from '@/Components/Table';
+import { baseUrlImage, baseUrlImageProduct } from '@/service/Config';
 
 export default function Index() {
     const [categories, setCategory] = useState([]);
@@ -19,7 +18,6 @@ export default function Index() {
     }, []);
 
     const { props } = usePage();
-    console.log(props);
 
     return (
         <>
@@ -46,7 +44,9 @@ export default function Index() {
                             <tr data-i={i} key={i}>
                                 <td>{i + 1}</td>
                                 <td>{cate.name}</td>
-                                <td>{cate.image}</td>
+                                <td>
+                                    <img src={props.ziggy.url + '/assets/upload/category/' + cate.image} alt="Image" />
+                                </td>
                                 <td>{cate.sku}</td>
                                 <td>{cate.created_at}</td>
                                 <td>{cate.updated_at}</td>

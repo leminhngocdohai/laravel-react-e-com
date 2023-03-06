@@ -1,1 +1,0 @@
-import{d as e}from"./app.c84948a8.js";e.defaults.baseURL="http://127.0.0.1:8000/api";const a=t=>e.get("/category",t),g=(t,o)=>e.get(`/category/show/${t}`,o),r=t=>e.get("/product",t),c=t=>e.get("/user",t),d=t=>e.get("/order",t);export{a,d as b,r as c,c as d,g};
