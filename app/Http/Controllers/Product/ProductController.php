@@ -3,7 +3,12 @@
 namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -24,7 +29,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::orderBy('id', 'desc')->get();
+        return Inertia::render('Backend/Product/Create', [
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -35,7 +43,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//
     }
 
     /**

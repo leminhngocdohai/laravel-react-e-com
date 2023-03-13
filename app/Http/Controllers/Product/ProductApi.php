@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Product;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class ProductApi extends Controller
 {
@@ -26,7 +29,33 @@ class ProductApi extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
+        $product = new Product;
+        $product->name = $request->name;
+        $product->sku = $request->sku;
+        $product->price = $request->price;
+        $product->quantity = $request->quantity;
+        $product->description = $request->description;
+        $product->category_id = $request->category_id;
+        // $product->slug = Str::slug($request->name);
+
+
+        if ($request->hasFile('image')) {
+            $old_img_name = public_path('assets\upload\product',$product->image);
+            if (File::exists($old_img_name)) {
+                File::delete($old_img_name);
+            }
+            $img = $request->image;
+            $img_name = Str::slug($request->name,'_').'.'.$img->getClientOriginalExtension();
+            $img->move('assets/upload/product',$img_name);
+            $product->image = $img_name ;
+        }else{
+            $product->image = 'no-img.jpg';
+        }
+
+        $product->save();
+
+        return redirect()->route('dashboard.product')->with('message', 'product Created Successfully');
     }
 
     /**

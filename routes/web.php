@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Product\ProductController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -53,6 +54,7 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/product', function () {
         return Inertia::render('Backend/Product/Index');
     })->middleware(['auth', 'verified'])->name('dashboard.product');
+    Route::get('/product/create', [ProductController::class, 'create'])->middleware(['auth', 'verified'])->name('dashboard.product.create');
 
     Route::get('/user', function () {
         return Inertia::render('Backend/User/Index');

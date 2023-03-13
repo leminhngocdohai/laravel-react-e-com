@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://vanphap.com/api';
+axios.defaults.baseURL = 'http://127.0.0.1:8000/api';
 
 export const getCategory = (config) => axios.get('/category', config);
 

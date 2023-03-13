@@ -20,7 +20,7 @@ export default function Index() {
         <>
             <Dashboard>
                 <h1>Sản Phẩm</h1>
-                <Link className="btn" href={route('dashboard')}>
+                <Link className="btn" href={route('dashboard.product.create')}>
                     Thêm sản phẩm +
                 </Link>
                 <table className="styled-table">

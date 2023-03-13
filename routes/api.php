@@ -36,6 +36,7 @@ Route::prefix('category')->group(function () {
 Route::prefix('product')->group(function () {
     Route::get('/', [ProductApi::class, 'index']);
     Route::get('show/{id}', [ProductApi::class, 'show']);
+    Route::post('store', [ProductApi::class, 'store'])->name('api.product.store');
 });
 
 // Attributes
