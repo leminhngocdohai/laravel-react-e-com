@@ -1,0 +1,1 @@
+import{a as r,F as a}from"./app.c9525618.js";import t from"./Dashboard.b64fcdbb.js";import"./Api.9f5ce733.js";function e(){return r(a,{children:r(t,{children:r("h1",{children:"S\u1EEDa S\u1EA3n Ph\u1EA9m"})})})}export{e as default};

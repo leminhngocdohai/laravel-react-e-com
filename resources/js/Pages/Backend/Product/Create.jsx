@@ -24,7 +24,7 @@ export default function Create() {
         price: '',
         quantity: '',
         description: '',
-        category_id: '',
+        category_id: 1,
         drone: '',
     });
 
@@ -42,6 +42,10 @@ export default function Create() {
     const handleInputFile = (e) => {
         setData('image', e.target.files[0]);
         setInputImage(URL.createObjectURL(e.target.files[0]));
+    };
+
+    const onHandleChangeSelect = (e) => {
+        setData('category_id', e.target.value);
     };
 
     const submit = (e) => {
@@ -70,19 +74,6 @@ export default function Create() {
                             handleChange={onHandleChange}
                         />
                         <InputError message={errors.name} />
-                    </div>
-                    <div>
-                        <InputLabel forInput="sos" value="sos" />
-                        <TextInput
-                            type="text"
-                            name="sos"
-                            value={data.sos}
-                            className=""
-                            autoComplete="sos"
-                            isFocused={true}
-                            handleChange={onHandleChange}
-                        />
-                        <InputError message={errors.sos} />
                     </div>
 
                     <div>
@@ -148,30 +139,14 @@ export default function Create() {
                         <InputError message={errors.description} />
                     </div>
 
-                    {/* <div>
-                        <InputLabel forInput="category_id" value="Thuộc danh mục nào" />
-                        <div>
-                            {props.categories.map((category, index) => (
-                                <div>
-                                    <input
-                                        type="radio"
-                                        name="category_id"
-                                        id={category.name}
-                                        key={index}
-                                        defaultValue={category.id}
-                                    />
-                                    <label htmlFor={category.name}>{category.name}</label>
-                                </div>
-                            ))}
-                        </div>
-
-                        <InputError message={errors.category_id} />
-                    </div> */}
-
-                    <select name="category_id" id="category_id">
+                    <select
+                        value={data.category_id}
+                        onChange={onHandleChangeSelect}
+                        name="category_id"
+                        id="category_id"
+                    >
                         {props.categories.map((category, index) => (
                             <option key={index} value={category.id}>
-                                {category.id}
                                 {category.name}
                             </option>
                         ))}
